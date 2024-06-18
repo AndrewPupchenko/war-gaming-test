@@ -1,0 +1,25 @@
+.modal {
+    position: relative;
+    z-index: 100;
+    height: max-content;
+  }
+  
+  .modal-content {
+    background: var(--backgroundColor);
+    color: var(--darkTextColor);
+    padding: 20px;
+    min-width: 300px;
+    gap: 10px;
+    display: grid;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    color: var(--darkTextColor);
+  }
