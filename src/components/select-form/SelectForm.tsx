@@ -3,15 +3,15 @@ import { FC, useDeferredValue, useMemo } from "react"
 import { DEFAULT_OPTIONS, MockData } from "../../data/mock_data"
 import { SelectedGroup } from "../selected-group/SelectedGroup"
 import { ModalProps } from "../modal/Modal"
-import "./SelectItemsForm.css"
+import "./SelectForm.css"
 
-export type SelectItemsFormProps = Pick<ModalProps, "onClose"> & {
+export type SelectFormProps = Pick<ModalProps, "onClose"> & {
   data: MockData[]
   defaults: MockData[]
   handleSubmitItems: (el: MockData[]) => void
 }
 
-export const SelectItemsForm: FC<SelectItemsFormProps> = ({
+export const SelectForm: FC<SelectFormProps> = ({
   data,
   defaults,
   handleSubmitItems,
@@ -95,10 +95,7 @@ export const SelectItemsForm: FC<SelectItemsFormProps> = ({
                 checked={checked}
                 onChange={handleChange}
               />
-              <label htmlFor={element}>
-                <i className="fas fa-check" />
-                {element}
-              </label>
+              <label htmlFor={element}>{element}</label>
             </li>
           )
         })}

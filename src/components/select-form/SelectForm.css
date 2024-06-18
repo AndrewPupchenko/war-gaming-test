@@ -30,14 +30,20 @@
     outline-offset: -1px;
   }
 
-  .input-group select option{
+  select:focus {
+    outline: none;
     border-radius: 0;
+  }
+
+  select option:focus {
+    outline: none; 
   }
 
   .button-group {
     display: inline-flex;
     gap: 10px;
   }
+
   .modal-selected-content {
     display: grid;
     overflow-y: scroll; 
@@ -58,22 +64,20 @@
     gap: 10px;
   }
 
-/* Скрыть стандартный чекбокс */
 input[type="checkbox"] {
   position: absolute;
   opacity: 0;
 }
 
-/* Стилизация видимого элемента, заменяющего чекбокс */
 input[type="checkbox"] + label:before {
   content: '';
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 1px solid #999;
-  background-color: #fff;
+  border: 1px solid var(--secondaryText);
+  background-color: var(--darkTextColor);
   vertical-align: middle;
-  margin-right: 8px; /* Отступ между галочкой и текстом */
+  margin-right: 8px;
 }
 
 input[type="checkbox"]:checked + label:before {
@@ -87,4 +91,6 @@ input[type="checkbox"]:checked + label:before {
     color: var(--successColor);
 }
 
-
+input[type="checkbox"]:disabled + label:before {
+  background-color: var(--secondaryText);
+}

@@ -1,7 +1,7 @@
 import { useMemo } from "react"
 import "./App.css"
 import Modal from "./components/modal/Modal"
-import { SelectItemsForm } from "./components/select-items-modal/SelectItemsForm"
+import { SelectForm } from "./components/select-form/SelectForm"
 import { SelectedGroup } from "./components/selected-group/SelectedGroup"
 import { useElements } from "./hooks/useElements"
 import { useModal } from "./hooks/useModal"
@@ -28,7 +28,7 @@ function App() {
       </button>
 
       <Modal title="Select items" isOpen={isModalOpen} onClose={closeModal}>
-        <SelectItemsForm
+        <SelectForm
           data={data}
           defaults={selected}
           onClose={closeModal}
